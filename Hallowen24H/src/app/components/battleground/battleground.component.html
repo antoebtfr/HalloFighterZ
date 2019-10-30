@@ -1,1 +1,19 @@
 <p>battleground works!</p>
+<div class="container">
+    <div class="battleContainer">
+        <div class="player1">
+            <app-monstres (playerId)=1></app-monstres>
+        </div>
+        <div class="player2">
+            <app-monstres (playerId)=2></app-monstres>
+        </div>
+    </div>
+    <div class="attackContainer">
+        <div>
+            <app-container-barre (playerId)=1></app-container-barre>
+        </div>
+        <div>
+            <app-container-barre (playerId)=2></app-container-barre>
+        </div>
+    </div>
+</div>
