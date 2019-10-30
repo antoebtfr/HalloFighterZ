@@ -1,11 +1,19 @@
+import { Attack } from './../models/attack';
+import { Monster } from './../models/monster';
 import { Injectable } from '@angular/core';
-import { Attack } from '../models/attack';
 import { MonstreService } from './monstre.service';
+import { HttpClient } from '@angular/common/http';
+import { map, flatMap, tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AttackService {
+
+  static URL = '192.169.1.99:3000/attack/';
+
+  player1: number = 0;
+  player2: number = 1;
 
 //   allAttack: Attack[] = [
 //     {
@@ -101,17 +109,61 @@ export class AttackService {
   monsterCurrentAttack: Attack[][] = [];
 
 
-  constructor(public service: MonstreService) { }
+  constructor(public service: MonstreService, private http: HttpClient) { }
 
-  getAttackByIdMonster(id: number) {
-    return this.allAttack.filter(attack => attack.idMonster === Number(id));
+  getAttackByIdMonster(player: number) {
+    const id: number = this.service.currentMonster[player - 1].id;
+    return this.http.get(AttackService.URL + id)
+    .pipe(
+      // map(this.turnDataIntoAttack,
+      tap((data: Attack[]) => this.monsterCurrentAttack.push(data))
+      );
   }
 
-  pushAttackIntoService(player: number) {
-    this.monsterCurrentAttack.push(this.getAttackByIdMonster(this.service.currentMonster[player-1]));
+  // turnDataIntoAttack(data: Attack[]): Attack {
+  //   return {
+  //     id : data.id,
+  //     idMonster : data.idMonster,
+  //     title : data.title,
+  //     damage : data.damage,
+  //     ratio : data.ratio,
+  //     caracteristic : data.caracteristic,
+  //     cost : data.cost,
+  //     toTheOpponent : data.toTheOpponent,
+  //     sprites : data.sprites,
+
+  //   }
+  // }
+
+  // pushAttackIntoService(player: number) {
+  //   const idMonsterPlayer: number = this.service.currentMonster[player - 1].id;
+  //   this.monsterCurrentAttack.pipe(flatMap(push(this.getAttackByIdMonster(idMonsterPlayer)));
+  // }
+
+  defineOtherPlayer(playerId: number): number {
+    if (playerId === 1) {return 2; } else {return 1; }
   }
 
   launchAttack(id: number, player: number) {
-    
+    const attack: Attack = this.monsterCurrentAttack[player - 1][id];
+    let otherPlayerLife: number = this.service.currentMonster[this.defineOtherPlayer(player) - 1].life;
+    if (attack.toTheOpponent === true) {
+      otherPlayerLife -= (attack.damage * this.service.currentMonster[player - 1].attack) / 100;
+      return this.service.currentMonster[this.defineOtherPlayer(player) - 1].life = otherPlayerLife;
+    } else {
+      let currentPlayer: Monster = this.service.currentMonster[player - 1];
+      if (attack.caracteristic === 'life') {
+        currentPlayer.life += attack.damage;
+      }
+      if (attack.caracteristic === 'energy') {
+        currentPlayer.energy += attack.damage;
+      }
+      if (attack.caracteristic === 'defense') {
+        currentPlayer.defense += attack.damage;
+      }
+      if (attack.caracteristic === 'attack') {
+        currentPlayer.attack += attack.damage;
+      }
+    }
   }
 }
