@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MonstreService } from 'src/app/service/monstre.service';
+import { AttackService } from 'src/app/service/attack.service';
 
 @Component({
   selector: 'app-monstres',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MonstresComponent implements OnInit {
 
-  constructor() { }
+  @Input() playerId: number;
+  img: string;
+
+  constructor(public monster: MonstreService, public attack: AttackService) { }
 
   ngOnInit() {
+    this.img = this.monster.currentMonster[this.playerId - 1].image;
   }
 
 }
