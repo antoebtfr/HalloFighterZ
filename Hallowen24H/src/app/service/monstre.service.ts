@@ -50,7 +50,7 @@ export class MonstreService implements OnInit{
     return this.http.get<Monster>('http://192.168.1.99:3000/monster' + id)
     .pipe(
       map((monster: Monster) => new Monster(monster)),
-      tap((monster: Monster) => {this.currentMonster = monster; })
+      tap((monster: Monster) => {this.currentMonster.push(monster); })
     );
   }
 
