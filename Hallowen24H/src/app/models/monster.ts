@@ -20,4 +20,10 @@ export class Monster {
   public defense: number;
 >>>>>>> origin/service-monstre
 
+  constructor(input?: Monster) {
+
+    if (input) {
+      Object.assign(this, input);
+    }
+  }
 }
