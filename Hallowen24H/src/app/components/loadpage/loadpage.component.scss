@@ -1,0 +1,23 @@
+section{
+    background-color: grey;
+    height: 100vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .title{
+        font-size: 100px;
+        width:100%;
+        display: flex;
+        flex-flow: wrap column;
+        align-items: center;
+        h1{
+            text-align: center;
+        }    
+    }
+
+    #press{
+        font-size: 30px;
+    }
+}
