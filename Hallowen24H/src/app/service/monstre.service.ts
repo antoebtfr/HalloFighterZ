@@ -1,5 +1,5 @@
+import { Monster } from './../models/monster';
 import { Injectable } from '@angular/core';
-import { Monster } from '../models/monster';
 
 
 @Injectable({
