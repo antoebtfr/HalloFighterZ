@@ -11,6 +11,7 @@ import { TimerComponent } from './components/timer/timer.component';
 import { ContainerBarreComponent } from './components/container-barre/container-barre.component';
 import { HUDComponent } from './components/hud/hud.component';
 import { MonstresComponent } from './components/monstres/monstres.component';
+import { ChampselectComponent } from './components/champselect/champselect.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MonstresComponent } from './components/monstres/monstres.component';
     ContainerBarreComponent,
     HUDComponent,
     MonstresComponent,
+    ChampselectComponent,
   ],
   imports: [
     BrowserModule,
