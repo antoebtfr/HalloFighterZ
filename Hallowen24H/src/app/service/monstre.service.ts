@@ -13,8 +13,8 @@ export class MonstreService {
   allMonster: Monster[] = [
     {
       id: 1,
-      name: "Jason",
-      image: "https://www.mezcotoyz.com/mas_assets/cache/image/1/3/2/3/4899.Jpg",
+      name: ".JSON",
+      image: "../../../assets/json.gif",
       description: "",
       attack: 150,
       life: 125,
@@ -24,7 +24,7 @@ export class MonstreService {
     {
       id: 2,
       name: "Dracula",
-      image: "https://www.ecranlarge.com/uploads/image/001/090/dracula-photo-1090996.jpg",
+      image: "../../../assets/alucard.gif",
       description: "",
       attack: 100,
       life: 150,
