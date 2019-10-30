@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-timer',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
 
+  time = 15;
+
   constructor() { }
 
   ngOnInit() {
-  }
 
+}
+startCountdown() {
+      let interval = setInterval(() => {
+      this.time--;
+
+      if (this.time <= 0 ) {
+        clearInterval(interval);
+        console.log('Au tour du suivant, dommage pour toi')
+      }
+    }, 1000);
+  }
 }
