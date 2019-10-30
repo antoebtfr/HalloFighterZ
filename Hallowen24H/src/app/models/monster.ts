@@ -9,4 +9,10 @@ export class Monster {
   public energy: number;
   public defense: number;
 
+  constructor(input?: Monster) {
+
+    if (input) {
+      Object.assign(this, input);
+    }
+  }
 }
