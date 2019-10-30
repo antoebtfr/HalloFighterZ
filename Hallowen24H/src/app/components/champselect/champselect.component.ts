@@ -1,3 +1,5 @@
+import { Monster } from './../../models/monster';
+import { MonstreService } from './../../service/monstre.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampselectComponent implements OnInit {
 
-  constructor() { }
+  public monsters: Monster[];
+
+  public currentUser = {img: "", name: ""}
+
+  constructor(private _monstreService: MonstreService) { }
 
   ngOnInit() {
+    this.monsters = this._monstreService.allMonster
+  }
+
+  showMonster(x ,y){
+    const currentChamp = document.getElementById("currentChamp");
+    const currentChampName = document.getElementById("currentChampName")
+    this.currentUser.name = x;
+    this.currentUser.img = y;
+    currentChamp.setAttribute("src", this.currentUser.img);
   }
 
 }

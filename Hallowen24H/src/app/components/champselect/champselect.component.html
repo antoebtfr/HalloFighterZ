@@ -1,3 +1,8 @@
 <section>
-    
+    <div id="selectedChamp">
+        <span id="currentChampName" style="display: block"> {{currentUser.name}} </span>
+        <img id="currentChamp">
+    </div>
+    <div *ngFor="let monster of monsters" class="monster" (click)="showMonster(monster.name, monster.image)"> TEst
+    </div>
 </section>
