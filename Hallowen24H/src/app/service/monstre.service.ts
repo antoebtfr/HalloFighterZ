@@ -1,11 +1,11 @@
 import { Monster } from './../models/monster';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class MonstreService {
+export class MonstreService implements OnInit{
 
   currentMonster: Monster[];
 
@@ -45,6 +45,10 @@ export class MonstreService {
 
   pushMonster(player: number) {
     this.currentMonster.push(this.getMonsterById[player - 1]);
+  }
+
+  ngOnInit() {
+    
   }
 
 
