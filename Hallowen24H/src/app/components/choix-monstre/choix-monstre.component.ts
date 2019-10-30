@@ -15,7 +15,7 @@ export class ChoixMonstreComponent implements OnInit {
   constructor(private monsterService: MonstreService) { }
 
   ngOnInit() {
-    this.chooseMonster = this.monsterService.allMonster;
-    console.log("cela ne marche pas")
+    // this.chooseMonster = this.monsterService.allMonster;
+    // console.log("cela ne marche pas")
   }
 }

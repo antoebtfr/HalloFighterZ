@@ -13,6 +13,9 @@ import { ContainerBarreComponent } from './components/container-barre/container-
 import { HUDComponent } from './components/hud/hud.component';
 import { MonstresComponent } from './components/monstres/monstres.component';
 import { ChampselectComponent } from './components/champselect/champselect.component';
+import { AttackChooseComponent } from './components/attack-choose/attack-choose.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AttackService } from './service/attack.service';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { ChampselectComponent } from './components/champselect/champselect.compo
     HUDComponent,
     MonstresComponent,
     ChampselectComponent,
+    AttackChooseComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [MonstreService],
+  providers: [MonstreService,AttackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

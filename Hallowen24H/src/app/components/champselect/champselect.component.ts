@@ -16,7 +16,7 @@ export class ChampselectComponent implements OnInit {
   constructor(private _monstreService: MonstreService) { }
 
   ngOnInit() {
-    this.monsters = this._monstreService.allMonster
+    // this.monsters = this._monstreService.allMonster
   }
 
   showMonster(x ,y){
