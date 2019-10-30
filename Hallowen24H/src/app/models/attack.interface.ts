@@ -1,5 +1,5 @@
 export interface AttackInterface {
-    
+
     id: number;
     idMonster: number;
     title: string;
