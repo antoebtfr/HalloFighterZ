@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampselectComponent implements OnInit {
 
-  public monsters: Monster[];
+  public monsters: Monster[] = [];
 
   public currentUser = {img: "", name: ""}
 
-  constructor(private _monstreService: MonstreService) { }
+  constructor(private monstreService: MonstreService) { }
 
   ngOnInit() {
-    this.monsters = this._monstreService.allMonster
+    this.monsters = this.monstreService.allMonster ; 
   }
 
   showMonster(x ,y){
