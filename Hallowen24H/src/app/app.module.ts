@@ -1,3 +1,4 @@
+import { MonstreService } from './service/monstre.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -30,7 +31,7 @@ import { ChampselectComponent } from './components/champselect/champselect.compo
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MonstreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,4 +4,22 @@ section{
     width:1300px;
     border: solid white 3px;
     border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+
+    #currentChamp{
+        width: 300px;
+        position: fixed;
+        top:0;
+    }
+    .monster{
+        background-color: red;
+        width: 18%;
+        height: 40%;
+        margin: 10px 5px;
+        color: white;
+        cursor: pointer;
+    }
 }
