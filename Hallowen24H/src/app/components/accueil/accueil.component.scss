@@ -1,5 +1,5 @@
 section{
-    background-color: grey;
+    background: url("../../../assets/bg.png");
     height: 100vh;
     color: white;
     font-size: 30px;
@@ -21,6 +21,7 @@ section{
             border: solid 4px white;
             font-size:2em;
             margin-bottom: 30px;
+            text-align: center;
         }
     }
 
