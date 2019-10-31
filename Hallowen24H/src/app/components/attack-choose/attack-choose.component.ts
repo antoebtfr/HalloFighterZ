@@ -10,24 +10,33 @@ import { Monster } from 'src/app/models/monster';
   styleUrls: ['./attack-choose.component.scss']
 })
 
-export class AttackChooseComponent implements OnInit {
+export class AttackChooseComponent  {
 
-  monsterAttacks : Attack[] = [];
+  monsterAttacks : Attack[];
   allMonster: Monster[] = [];
   currentMonster: Monster[] = [];
 
+  attackCurentMonster: [];
+
   constructor(private attackService: AttackService, private monstreService: MonstreService) {
-
+      // this.monsterAttacks = this.attackService.allAttack;
   }
 
-  ngOnInit() {
-    // this.allMonster = this.monstreService.allMonster;
-    // this.currentMonster = this.monstreService.currentMonster;
-    // this.attackService.getAttackByIdMonster(1).subscribe((data) => {return this.monsterAttacks = data});
-  }
-  showMonsterAttack(){
-    console.log( this.monsterAttacks);
-    console.log( 'allMonster' + this.allMonster);
-    console.log('currentMonster :' + this.currentMonster);
-  }
+
+  // ngOnInit() {
+  //   this.allMonster = this.monstreService.allMonster;
+  //   this.currentMonster = this.monstreService.currentMonster;
+  //   this.monstreService.getMonsterById(1)
+  //       .subscribe((current)=>{
+
+  //         this.attackService.getAttackByIdMonster(1).subscribe((data) => {
+  //           this.monsterAttacks = data
+  //         })
+  //   });
+  // }
+  // showMonsterAttack(){
+  //   console.log( this.monsterAttacks);
+  //   console.log( 'allMonster' + this.allMonster);
+  //   console.log('currentMonster :' + this.currentMonster);
+  // }
 }
