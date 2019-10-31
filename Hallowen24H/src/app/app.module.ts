@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { MonstreService } from './service/monstre.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadpageComponent } from './components/loadpage/loadpage.component';
@@ -29,7 +30,8 @@ import { ChampselectComponent } from './components/champselect/champselect.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [MonstreService],
   bootstrap: [AppComponent]
