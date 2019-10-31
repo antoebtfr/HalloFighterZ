@@ -102,7 +102,7 @@ export class BattlegroundComponent implements OnInit {
     node.src = this.attacks[x].sprites;
     node.id = "AttackAnimation";
     console.log(node.src)
-    if (this.attacks[x].toTheOpponent === false) {
+    if (this.attacks[x].toTheOpponent === false && this.canAttack) {
       node.style.position='absolute';
       node.style.left="30px";
       node.style.top='150px';
@@ -112,7 +112,7 @@ export class BattlegroundComponent implements OnInit {
       window.setTimeout(() => spriteB.removeChild(node), 1000);
   
     }
-    if (this.attacks[x].toTheOpponent === true) {
+    if (this.attacks[x].toTheOpponent === true && this.canAttack) {
       node.style.position='absolute';
       node.style.right="30px";
       node.style.top='150px';
@@ -169,7 +169,7 @@ export class BattlegroundComponent implements OnInit {
       node.src = this.attackBot[ramdomNumber].sprites;
       node.id = "AttackAnimation";
       console.log(node.src)
-      if (this.attackBot[ramdomNumber].toTheOpponent === false) {
+      if (this.attackBot[ramdomNumber].toTheOpponent === false && this.canAttack) {
         node.style.position='absolute';
         node.style.right="30px";
         node.style.top='150px';
@@ -179,7 +179,7 @@ export class BattlegroundComponent implements OnInit {
         window.setTimeout(() => spriteA.removeChild(node), 1000);
     
       }
-      if (this.attackBot[ramdomNumber].toTheOpponent === true) {
+      if (this.attackBot[ramdomNumber].toTheOpponent === true && this.canAttack) {
         node.style.position='absolute';
         node.style.left="30px";
         node.style.top='150px';
