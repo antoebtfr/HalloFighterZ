@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MonstreService {
 
-  currentMonster: Monster[];
+  currentMonster: Monster[] = [];
 
   allMonster: Monster[] = [
     {
@@ -31,7 +31,7 @@ export class MonstreService {
       energy: 150,
       defense: 100
     }
-];
+  ] ;
   // allMonster: Monster[] = [];
 
   constructor(private http: HttpClient) { }
@@ -43,7 +43,7 @@ export class MonstreService {
 
   // getMonsterById(id: number) {
 
-  //   return this.http.get<Monster>('http://192.168.1.99:3000/monster' + id)
+  //   return this.http.get<Monster>('http://192.168.1.99:3000/monster/' + id)
   //   .pipe(
   //     map((monster: Monster) => new Monster(monster)),
   //     tap((monster: Monster) => {this.currentMonster.push(monster) ; })
