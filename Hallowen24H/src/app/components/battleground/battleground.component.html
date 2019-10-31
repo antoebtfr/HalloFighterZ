@@ -17,7 +17,7 @@
     </div>
     <div id="attaqueChoice">
       <ul>
-        <li class="attack" *ngFor="let attack of attacks"> {{attack.title}} </li>
+        <li class="attack" *ngFor="let attack of attacks, let i=index" (click)="test()"> {{attack.title}} </li>
       </ul>
     </div>
   </div>

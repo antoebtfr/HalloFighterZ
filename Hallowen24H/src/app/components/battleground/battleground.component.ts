@@ -9,6 +9,9 @@ import { MonstreService } from 'src/app/service/monstre.service';
 })
 export class BattlegroundComponent implements OnInit {
 
+  public life1 = 50;
+  public life2 = 70;
+
   public attacks = [];
   public persoB = "";
   public playerOne;
@@ -21,7 +24,7 @@ export class BattlegroundComponent implements OnInit {
     } else if (this.playerOne === "../../../assets/alucard.gif") {
       return 2;
     } else {
-      return 6;
+      return 42;
     }
   }
   bootAttack(idMonster: number) {
@@ -33,6 +36,10 @@ export class BattlegroundComponent implements OnInit {
     console.log(this.attacks);
     return this.attacks;
   }
+
+  public test(){
+    this.life1 -= 30;
+  }
   constructor(private _monstreService: MonstreService, private _attackService: AttackService) {
   }
 
@@ -43,6 +50,12 @@ export class BattlegroundComponent implements OnInit {
     this.checker();
     console.log(this.checker());
     this.bootAttack(this.checker());
+    this.linkLife();
+  }
+
+  linkLife(){
+    const L1 = document.getElementById("currentLife1").style.width = `50%`;
+    const L2 = document.getElementById("currentLife2").style.width = `{life2}%`;
   }
 
 }
