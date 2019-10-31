@@ -1,6 +1,5 @@
 import { Monster } from './../models/monster';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
