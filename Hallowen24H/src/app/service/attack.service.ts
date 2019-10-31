@@ -15,7 +15,6 @@ export class AttackService {
   player1: number = 0;
   player2: number = 1;
 
-<<<<<<< HEAD
   allAttack = [
     
       {
@@ -28,24 +27,10 @@ export class AttackService {
         cost: 80,
         toTheOpponent: true,
         sprites: "../../../assets/slash.gif"
-=======
-  allAttack: Attack[] = [
-    {
-        id: 1,
-        idMonster: 1,
-        title: 'Coup de Hache',
-        damage: 50,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 80,
-        toTheOpponent: true,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 2,
         idMonster: 1,
-<<<<<<< HEAD
         title: "Etranglement",
         damage: 20,
         ratio: 1,
@@ -53,20 +38,10 @@ export class AttackService {
         cost: 30,
         toTheOpponent: true,
         sprites: "../../../assets/etranglement.gif"
-=======
-        title: 'Etranglement',
-        damage: 20,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 30,
-        toTheOpponent: true,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 3,
         idMonster: 1,
-<<<<<<< HEAD
         title: "Berserk",
         damage: 10,
         ratio: 1,
@@ -74,20 +49,10 @@ export class AttackService {
         cost: 20,
         toTheOpponent: false,
         sprites: "../../../assets/berserk.gif"
-=======
-        title: 'Berserk',
-        damage: 10,
-        ratio: 1,
-        caracteristic: 'attack',
-        cost: 20,
-        toTheOpponent: false,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 4,
         idMonster: 1,
-<<<<<<< HEAD
         title: "Saignement",
         damage: 5,
         ratio: 1,
@@ -95,20 +60,10 @@ export class AttackService {
         cost: 25,
         toTheOpponent: true,
         sprites: "../../../assets/saignement.gif"
-=======
-        title: 'Saignement',
-        damage: 5,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 25,
-        toTheOpponent: true,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 5,
         idMonster: 2,
-<<<<<<< HEAD
         title: "Croc",
         damage: 30,
         ratio: 1,
@@ -116,20 +71,10 @@ export class AttackService {
         cost: 60,
         toTheOpponent: true,
         sprites: ""
-=======
-        title: 'Croc',
-        damage: 30,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 60,
-        toTheOpponent: true,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 6,
         idMonster: 2,
-<<<<<<< HEAD
         title: "Lancer de chauve-souris",
         damage: 15,
         ratio: 1,
@@ -137,20 +82,10 @@ export class AttackService {
         cost: 40,
         toTheOpponent: true,
         sprites: ""
-=======
-        title: 'Lancer de chauve-souris',
-        damage: 15,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 40,
-        toTheOpponent: true,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 7,
         idMonster: 2,
-<<<<<<< HEAD
         title: "Lecture approfondi",
         damage: 20,
         ratio: 1,
@@ -158,20 +93,10 @@ export class AttackService {
         cost: 25,
         toTheOpponent: false,
         sprites: ""
-=======
-        title: 'Lecture approfondi',
-        damage: 20,
-        ratio: 1,
-        caracteristic: 'energy',
-        cost: 25,
-        toTheOpponent: false,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
     {
         id: 8,
         idMonster: 2,
-<<<<<<< HEAD
         title: "Transfusion sanguine",
         damage: 5,
         ratio: 1,
@@ -179,15 +104,6 @@ export class AttackService {
         cost: 30,
         toTheOpponent: false,
         sprites: ""
-=======
-        title: 'Transfusion sanguine',
-        damage: 5,
-        ratio: 1,
-        caracteristic: 'life',
-        cost: 30,
-        toTheOpponent: false,
-        sprites: ''
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
     },
 ];
 

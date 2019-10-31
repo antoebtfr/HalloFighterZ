@@ -8,12 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MonstreService {
 
-<<<<<<< HEAD
   currentMonster: Monster[];
   playerOneImg =  "";
-=======
-  currentMonster: Monster[] = [];
->>>>>>> 211fcbfe07abbafcc96726d7dab26fba31e305fe
 
   allMonster: Monster[] = [
     {
