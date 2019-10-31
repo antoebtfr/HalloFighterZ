@@ -5,7 +5,29 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  #winner{
+    font-size: 50px;
+    color: white;
+    text-shadow: -1px 0 10px black;
+    z-index: 50;
+  }
 
+  #modal{
+    width: 80%;
+    height:80%;
+    background-color: black;
+    color: white;
+    border: solid white 5px;
+    z-index: 0;
+    font-size: 30px;
+    ul{
+      margin-top: 23%;
+      li{
+        margin: 50px 0;
+        text-align: center;
+      }
+    }
+  }
   .lifebar {
     background-color: black;
     width: 43%;
@@ -45,13 +67,17 @@ section {
     position: fixed;
     bottom: 30%;
     left: 8%;
+    transition: 0.8s;
+    opacity: 1;
   }
   #persoB {
     height: 300px;
     position: fixed;
     bottom: 30%;
     right: 8%;
+    transition: 0.8s;
     transform: rotateY(180deg);
+    opacity: 1;
   }
 
   #dialog-box {
