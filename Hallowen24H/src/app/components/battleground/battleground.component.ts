@@ -14,8 +14,10 @@ export class BattlegroundComponent implements OnInit {
   public life2 = 100;
 
   public attacks: Attack[] = [];
+  public attackBot : Attack[] = [];
   public persoB = "";
   public playerOne;
+
   public getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this._monstreService.allMonster.length));
   }
@@ -41,6 +43,11 @@ export class BattlegroundComponent implements OnInit {
     console.log('je suis  attacks' + this.attacks);
     return this.attacks;
   }
+
+  public bootAttack2(idMonster: number) {
+    this.attackBot = this._attackService.allAttack.filter((data) => data.idMonster === idMonster + 1 );
+  }
+
 
   public atkP1(x) {
     this.attacks[x];
@@ -86,13 +93,17 @@ export class BattlegroundComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getRandomInt();
+    const idBot = this.getRandomInt();
     this.playerOne = this._monstreService.playerOneImg;
-    this.persoB = this._monstreService.allMonster[this.getRandomInt()].image;
+    this.persoB = this._monstreService.allMonster[idBot].image;
     this.checker();
     console.log(this.checker());
     this.bootAttack(this.checker());
+    this.bootAttack2(idBot)
     this.linkLife();
+    console.log(idBot);
+    
+    console.log(this.attackBot)
   }
 
 
