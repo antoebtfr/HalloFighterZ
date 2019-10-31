@@ -154,14 +154,41 @@ export class BattlegroundComponent implements OnInit {
       ramdomNumber = Math.floor(Math.random() * 4);
       console.log(ramdomNumber);
       if (ramdomNumber === 0 && this.canAttack ) {
-        this.life1 -= this.attacks[ramdomNumber].damage
+        this.life1 -= this.attackBot[ramdomNumber].damage
       } else if (ramdomNumber === 1 && this.canAttack ) {
-        this.life1 -= this.attacks[ramdomNumber].damage
+        this.life1 -= this.attackBot[ramdomNumber].damage
       } else if (ramdomNumber === 2 && this.canAttack ) {
-        this.life1 -= this.attacks[ramdomNumber].damage
+        this.life1 -= this.attackBot[ramdomNumber].damage
       } else if (ramdomNumber === 3 && this.canAttack ) {
-        this.life1 -= this.attacks[ramdomNumber].damage
+        this.life1 -= this.attackBot[ramdomNumber].damage
       }
+
+      const spriteA = document.getElementById('containerPersoA');
+      const spriteB = document.getElementById('containerPersoB');
+      let node = document.createElement('img');
+      node.src = this.attackBot[ramdomNumber].sprites;
+      node.id = "AttackAnimation";
+      console.log(node.src)
+      if (this.attackBot[ramdomNumber].toTheOpponent === false) {
+        node.style.position='absolute';
+        node.style.right="30px";
+        node.style.top='150px';
+        node.style.zIndex = '1000';
+        spriteA.appendChild(node);
+        // node.style = "position: absolute; left : 30px; top: 150px; z-index: 1000;";
+        window.setTimeout(() => spriteA.removeChild(node), 1000);
+    
+      }
+      if (this.attackBot[ramdomNumber].toTheOpponent === true) {
+        node.style.position='absolute';
+        node.style.left="30px";
+        node.style.top='150px';
+        node.style.zIndex = '1000';
+  
+          spriteB.appendChild(node);
+          window.setTimeout(() => spriteB.removeChild(node), 1000);
+      }
+  
 
       if (this.life1 < 0) {
         this.life1 = 0
