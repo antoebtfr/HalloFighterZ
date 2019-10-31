@@ -60,13 +60,20 @@ export class BattlegroundComponent implements OnInit {
     node.id = "AttackAnimation";
     console.log(node.src)
     if (this.attacks[x].toTheOpponent === false) {
-      node.style = "position: absolute; left : 30px; top: 150px; z-index: 1000;";
+      node.style.position='absolute';
+      node.style.left="30px";
+      node.style.top='150px';
+      node.style.zIndex = '1000';
       spriteB.appendChild(node);
+      // node.style = "position: absolute; left : 30px; top: 150px; z-index: 1000;";
       window.setTimeout(() => spriteB.removeChild(node), 1000);
   
     }
     if (this.attacks[x].toTheOpponent === true) {
-      node.style = "position: absolute; right : 30px; top: 150px; z-index: 1000;"
+      node.style.position='absolute';
+      node.style.right="30px";
+      node.style.top='150px';
+      node.style.zIndex = '1000';
 
         spriteA.appendChild(node);
         window.setTimeout(() => spriteA.removeChild(node), 1000);
