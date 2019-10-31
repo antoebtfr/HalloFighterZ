@@ -14,8 +14,10 @@ export class BattlegroundComponent implements OnInit {
   public life2 = 100;
 
   public attacks: Attack[] = [];
+  public isFinish = false;
   public persoB = "";
   public playerOne;
+  public modalIsOpen = false;
   public getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this._monstreService.allMonster.length));
   }
@@ -38,12 +40,35 @@ export class BattlegroundComponent implements OnInit {
         this.attacks.push(this._attackService.allAttack[i]);
       }
     }
+    this.IA()
     console.log('je suis  attacks' + this.attacks);
     return this.attacks;
   }
 
+  public IA() {
+    let ramdomNumber = Math.floor(Math.random() * 5);
+    return ramdomNumber;
+  }
+
+  public deathCheck() {
+
+    if (this.life1 < 0) {
+      this.life1 = 0
+      document.getElementById("persoA").style.opacity = "0";
+      this.isFinish = true;
+    }
+    if (this.life2 < 0) {
+      this.life2 = 0
+      document.getElementById("persoB").style.opacity = "0";
+      this.isFinish = true;
+    }
+  }
+
+  /* ------- ALGO DE JEU -------  */
+
   public atkP1(x) {
-    this.attacks[x];
+    const ramdomNumber = Math.floor(Math.random() * 4);
+
     if (x === 0) {
       this.life2 -= this.attacks[x].damage
     } else if (x === 1) {
@@ -81,7 +106,70 @@ export class BattlegroundComponent implements OnInit {
     // spriteA.appendChild(node);
     // window.setTimeout(() => spriteA.removeChild(node), 1000);
     this.linkLife();
+
+    if (this.life1 < 0) {
+      this.life1 = 0
+      document.getElementById("persoA").style.opacity = "0";
+      this.isFinish = true;
+      setTimeout( () => {
+        this.isFinish = false;
+        this.modalIsOpen = true;
+      }
+      ,3000)
+    }
+    if (this.life2 < 0) {
+      this.life2 = 0
+      document.getElementById("persoB").style.opacity = "0";
+      this.isFinish = true;
+      setTimeout( () => {
+        this.isFinish = false;
+        this.modalIsOpen = true;
+      }
+      ,3000)
+    }
+
+    setTimeout((ramdomNumber) => {
+      ramdomNumber = Math.floor(Math.random() * 4);
+      console.log(ramdomNumber);
+      if (ramdomNumber === 0) {
+        this.life1 -= this.attacks[ramdomNumber].damage
+      } else if (ramdomNumber === 1) {
+        this.life1 -= this.attacks[ramdomNumber].damage
+      } else if (ramdomNumber === 2) {
+        this.life1 -= this.attacks[ramdomNumber].damage
+      } else if (ramdomNumber === 3) {
+        this.life1 -= this.attacks[ramdomNumber].damage
+      }
+
+      if (this.life1 < 0) {
+        this.life1 = 0
+        document.getElementById("persoA").style.opacity= "0";
+        this.isFinish = true;
+        setTimeout( () => {
+          this.isFinish = false;
+          this.modalIsOpen = true;
+        }
+        ,3000)
+      };
+      if (this.life2 < 0) {
+        this.life2 = 0
+        document.getElementById("persoB").style.opacity= "0";
+        this.isFinish = true;
+        setTimeout( () => {
+          this.isFinish = false;
+          this.modalIsOpen = true;
+        }
+        ,3000)
+      }
+
+      console.log("Je suis la vie du perso 1 : " + this.life1);
+      console.log("Je suis la vie du perso 2 : " + this.life2);
+      this.linkLife();
+    }
+      , 2000);
+    this.linkLife();
   }
+
   constructor(private _monstreService: MonstreService, private _attackService: AttackService) {
   }
 
@@ -93,7 +181,9 @@ export class BattlegroundComponent implements OnInit {
     console.log(this.checker());
     this.bootAttack(this.checker());
     this.linkLife();
+    this.modalIsOpen = false;
   }
+
 
 
 }
