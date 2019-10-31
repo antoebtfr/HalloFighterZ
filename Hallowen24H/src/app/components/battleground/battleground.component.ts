@@ -13,11 +13,15 @@ export class BattlegroundComponent implements OnInit {
   public life1 = 100;
   public life2 = 100;
 
+  public winner: number;
+
   public attacks: Attack[] = [];
   public isFinish = false;
   public persoB = "";
   public playerOne;
   public modalIsOpen = false;
+  public canAttack = true;
+
   public getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this._monstreService.allMonster.length));
   }
@@ -64,6 +68,10 @@ export class BattlegroundComponent implements OnInit {
     }
   }
 
+
+
+  
+
   /* ------- ALGO DE JEU -------  */
 
   public atkP1(x) {
@@ -82,6 +90,7 @@ export class BattlegroundComponent implements OnInit {
     setTimeout( () =>{
       document.getElementById("attaqueChoice").style.display = "flex";
      }, 4000)
+
     const spriteA = document.getElementById('containerPersoA');
     const spriteB = document.getElementById('containerPersoB');
     let node = document.createElement('img');
@@ -112,8 +121,10 @@ export class BattlegroundComponent implements OnInit {
     this.linkLife();
 
     if (this.life1 <= 0) {
-      this.life1 = 0
+      this.life1 = 0;
+      this.canAttack = false;
       document.getElementById("persoA").style.opacity = "0";
+      this.winner = 2;
       this.isFinish = true;
       setTimeout( () => {
         this.isFinish = false;
@@ -122,8 +133,10 @@ export class BattlegroundComponent implements OnInit {
       ,3000)
     }
     if (this.life2 <= 0) {
-      this.life2 = 0
+      this.life2 = 0;
+      this.canAttack = false;
       document.getElementById("persoB").style.opacity = "0";
+      this.winner = 1;
       this.isFinish = true;
       setTimeout( () => {
         this.isFinish = false;
@@ -135,19 +148,21 @@ export class BattlegroundComponent implements OnInit {
     setTimeout((ramdomNumber) => {
       ramdomNumber = Math.floor(Math.random() * 4);
       console.log(ramdomNumber);
-      if (ramdomNumber === 0) {
+      if (ramdomNumber === 0 && this.canAttack ) {
         this.life1 -= this.attacks[ramdomNumber].damage
-      } else if (ramdomNumber === 1) {
+      } else if (ramdomNumber === 1 && this.canAttack ) {
         this.life1 -= this.attacks[ramdomNumber].damage
-      } else if (ramdomNumber === 2) {
+      } else if (ramdomNumber === 2 && this.canAttack ) {
         this.life1 -= this.attacks[ramdomNumber].damage
-      } else if (ramdomNumber === 3) {
+      } else if (ramdomNumber === 3 && this.canAttack ) {
         this.life1 -= this.attacks[ramdomNumber].damage
       }
 
       if (this.life1 < 0) {
         this.life1 = 0
+        this.canAttack = false;
         document.getElementById("persoA").style.opacity= "0";
+        this.winner = 2;
         this.isFinish = true;
         setTimeout( () => {
           this.isFinish = false;
@@ -157,7 +172,9 @@ export class BattlegroundComponent implements OnInit {
       };
       if (this.life2 < 0) {
         this.life2 = 0
+        this.canAttack = false;
         document.getElementById("persoB").style.opacity= "0";
+        this.winner = 1;
         this.isFinish = true;
         setTimeout( () => {
           this.isFinish = false;
