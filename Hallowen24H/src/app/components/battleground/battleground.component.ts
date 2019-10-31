@@ -78,6 +78,10 @@ export class BattlegroundComponent implements OnInit {
     } else if (x === 3) {
       this.life2 -= this.attacks[x].damage
     }
+    document.getElementById("attaqueChoice").style.display = "none";
+    setTimeout( () =>{
+      document.getElementById("attaqueChoice").style.display = "flex";
+     }, 4000)
     const spriteA = document.getElementById('containerPersoA');
     const spriteB = document.getElementById('containerPersoB');
     let node = document.createElement('img');
@@ -107,7 +111,7 @@ export class BattlegroundComponent implements OnInit {
     // window.setTimeout(() => spriteA.removeChild(node), 1000);
     this.linkLife();
 
-    if (this.life1 < 0) {
+    if (this.life1 <= 0) {
       this.life1 = 0
       document.getElementById("persoA").style.opacity = "0";
       this.isFinish = true;
@@ -117,7 +121,7 @@ export class BattlegroundComponent implements OnInit {
       }
       ,3000)
     }
-    if (this.life2 < 0) {
+    if (this.life2 <= 0) {
       this.life2 = 0
       document.getElementById("persoB").style.opacity = "0";
       this.isFinish = true;
