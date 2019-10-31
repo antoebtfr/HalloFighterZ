@@ -92,7 +92,7 @@ export class AttackService {
         caracteristic: "energy",
         cost: 25,
         toTheOpponent: false,
-        sprites: "../../../assets/lecture-approfondie.gif"
+        sprites: "../../../assets/lecture_approfondie.gif"
     },
     {
         id: 8,
