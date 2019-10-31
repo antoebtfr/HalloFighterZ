@@ -70,7 +70,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 60,
         toTheOpponent: true,
-        sprites: ""
+        sprites: "../../../assets/crocs.gif"
     },
     {
         id: 6,
@@ -81,7 +81,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 40,
         toTheOpponent: true,
-        sprites: ""
+        sprites: "../../../assets/chauve-souris.gif"
     },
     {
         id: 7,
@@ -92,7 +92,7 @@ export class AttackService {
         caracteristic: "energy",
         cost: 25,
         toTheOpponent: false,
-        sprites: ""
+        sprites: "../../../assets/lecture-approfondie.gif"
     },
     {
         id: 8,
@@ -103,7 +103,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 30,
         toTheOpponent: false,
-        sprites: ""
+        sprites: "../../../assets/transfert_2_vie.gif"
     },
 ];
 

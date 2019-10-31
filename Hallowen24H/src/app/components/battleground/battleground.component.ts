@@ -21,6 +21,7 @@ export class BattlegroundComponent implements OnInit {
   public playerOne;
   public modalIsOpen = false;
   public canAttack = true;
+  public attackBot : Attack[] = [];
 
   public getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this._monstreService.allMonster.length));
@@ -73,6 +74,10 @@ export class BattlegroundComponent implements OnInit {
   
 
   /* ------- ALGO DE JEU -------  */
+  public bootAttack2(idMonster: number) {
+    this.attackBot = this._attackService.allAttack.filter((data) => data.idMonster === idMonster + 1 );
+  }
+
 
   public atkP1(x) {
     const ramdomNumber = Math.floor(Math.random() * 4);
@@ -195,14 +200,18 @@ export class BattlegroundComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getRandomInt();
+    const idBot = this.getRandomInt();
     this.playerOne = this._monstreService.playerOneImg;
-    this.persoB = this._monstreService.allMonster[this.getRandomInt()].image;
+    this.persoB = this._monstreService.allMonster[idBot].image;
     this.checker();
     console.log(this.checker());
     this.bootAttack(this.checker());
+    this.bootAttack2(idBot)
     this.linkLife();
     this.modalIsOpen = false;
+    console.log(idBot);
+    
+    console.log(this.attackBot)
   }
 
 

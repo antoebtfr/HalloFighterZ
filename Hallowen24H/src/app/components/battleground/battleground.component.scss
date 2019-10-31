@@ -78,8 +78,7 @@ section {
     right: 8%;
     transition: 0.8s;
     transform: rotateY(180deg);
-    opacity: 1;
-  }
+    opacity: 1;}
 
   #dialog-box {
     background-color: black;
@@ -120,11 +119,4 @@ section {
       }
     }
   }
-}
-
-#AttackAnimation {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 10000;
 }
