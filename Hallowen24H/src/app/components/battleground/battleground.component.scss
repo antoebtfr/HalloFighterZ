@@ -1,5 +1,61 @@
-section{
-    background: url("../../../assets/map1.png");
-    background-size: cover;
-    height: 100vh;
+section {
+  background: url("../../../assets/map1.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  #persoA {
+    height: 300px;
+    position: fixed;
+    bottom: 30%;
+    left: 8%;
+  }
+  #persoB {
+    height: 300px;
+    position: fixed;
+    bottom: 30%;
+    right: 8%;
+    transform: rotateY(180deg);
+  }
+
+  #dialog-box {
+    background-color: black;
+    width: 80%;
+    height: 18vh;
+    border-radius: 30px;
+    border: solid white 5px;
+    position: fixed;
+    bottom: 5%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    #attaqueChoice {
+      height: 100%;
+      width: 50%;
+      margin-left: 6%;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2%;
+
+        .attack {
+          width: 45%;
+          height: 50px;
+          color: white;
+          margin: 3px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .attack:hover{
+            color: red;
+        }
+      }
+    }
+  }
 }

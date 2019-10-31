@@ -1,5 +1,17 @@
 <section>
-    <button (click)="test2()"> TEST </button>
-    <img [src]="playerOne">
-    <app-timer></app-timer>
+  <!--     <button (click)="test2()"> TEST </button> -->
+  <!--   <app-timer></app-timer> -->
+  <img id="persoA" [src]="playerOne">
+  <img id="persoB" [src]="persoB">
+
+  <div id="dialog-box">
+    <div id="dialog-IA">
+      Veuillez choisir une attaque :
+    </div>
+    <div id="attaqueChoice">
+      <ul>
+        <li class="attack" *ngFor="let attack of attacks"> {{attack.title}} </li>
+      </ul>
+    </div>
+  </div>
 </section>
