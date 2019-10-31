@@ -26,7 +26,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 80,
         toTheOpponent: true,
-        sprites: ""
+        sprites: "../../../assets/slash.gif"
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 30,
         toTheOpponent: true,
-        sprites: ""
+        sprites: "../../../assets/etranglement.gif"
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ export class AttackService {
         caracteristic: "attack",
         cost: 20,
         toTheOpponent: false,
-        sprites: ""
+        sprites: "../../../assets/berserk.gif"
     },
     {
         id: 4,
@@ -59,7 +59,7 @@ export class AttackService {
         caracteristic: "life",
         cost: 25,
         toTheOpponent: true,
-        sprites: ""
+        sprites: "../../../assets/saignement.gif"
     },
     {
         id: 5,

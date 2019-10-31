@@ -1,7 +1,7 @@
+import { Attack } from './../../models/attack';
 import { AttackService } from './../../service/attack.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MonstreService } from 'src/app/service/monstre.service';
-import { link } from 'fs';
 
 @Component({
   selector: 'app-battleground',
@@ -13,7 +13,7 @@ export class BattlegroundComponent implements OnInit {
   public life1 = 100;
   public life2 = 100;
 
-  public attacks = [];
+  public attacks: Attack[] = [];
   public persoB = "";
   public playerOne;
   public getRandomInt() {
@@ -53,6 +53,26 @@ export class BattlegroundComponent implements OnInit {
     } else if (x === 3) {
       this.life2 -= this.attacks[x].damage
     }
+    const spriteA = document.getElementById('containerPersoA');
+    const spriteB = document.getElementById('containerPersoB');
+    const node = document.createElement('img');
+    node.src = this.attacks[x].sprites;
+    node.id = "AttackAnimation";
+    console.log(node.src)
+    if (this.attacks[x].toTheOpponent === false) {
+      node.style = "position: absolute; left : 30px; top: 150px; z-index: 1000;"
+      spriteB.appendChild(node);
+      window.setTimeout(() => spriteB.removeChild(node), 1000);
+  
+    }
+    if (this.attacks[x].toTheOpponent === true) {
+      node.style = "position: absolute; right : 30px; top: 150px; z-index: 1000;"
+
+        spriteA.appendChild(node);
+        window.setTimeout(() => spriteA.removeChild(node), 1000);
+    }
+    // spriteA.appendChild(node);
+    // window.setTimeout(() => spriteA.removeChild(node), 1000);
     this.linkLife();
   }
   constructor(private _monstreService: MonstreService, private _attackService: AttackService) {

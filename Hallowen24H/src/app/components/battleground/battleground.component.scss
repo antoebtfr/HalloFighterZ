@@ -42,13 +42,13 @@ section {
 
   #persoA {
     height: 300px;
-    position: fixed;
+    position: absolute;
     bottom: 30%;
     left: 8%;
   }
   #persoB {
     height: 300px;
-    position: fixed;
+    position: absolute;
     bottom: 30%;
     right: 8%;
     transform: rotateY(180deg);
@@ -93,4 +93,11 @@ section {
       }
     }
   }
+}
+
+#AttackAnimation {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10000;
 }
