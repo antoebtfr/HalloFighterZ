@@ -10,13 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class ChampselectComponent implements OnInit {
 
   public monsters: Monster[];
-
-  public currentUser = {img: "", name: ""}
+  public currentUser = {img: "", name: ""};
+  public isSelected = false;
 
   constructor(private _monstreService: MonstreService) { }
 
   ngOnInit() {
-    // this.monsters = this._monstreService.allMonster
+    this.monsters = this._monstreService.allMonster
+    this.isSelected = false;
+    console.log(this.isSelected);
+     
   }
 
   showMonster(x ,y){
@@ -25,6 +28,7 @@ export class ChampselectComponent implements OnInit {
     this.currentUser.name = x;
     this.currentUser.img = y;
     currentChamp.setAttribute("src", this.currentUser.img);
+    this.isSelected = true;
   }
 
 }
