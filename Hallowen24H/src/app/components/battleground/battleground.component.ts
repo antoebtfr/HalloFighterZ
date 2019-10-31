@@ -14,17 +14,12 @@ export class BattlegroundComponent implements OnInit {
   public life2 = 100;
 
   public attacks: Attack[] = [];
-<<<<<<< HEAD
   public isFinish = false;
   public persoB = "";
   public playerOne;
   public modalIsOpen = false;
-=======
   public attackBot : Attack[] = [];
-  public persoB = "";
-  public playerOne;
 
->>>>>>> animVamp
   public getRandomInt() {
     return Math.floor(Math.random() * Math.floor(this._monstreService.allMonster.length));
   }
