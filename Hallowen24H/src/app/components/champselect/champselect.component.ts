@@ -12,6 +12,7 @@ export class ChampselectComponent implements OnInit {
   public monsters: Monster[];
   public currentUser = {img: "", name: ""};
   public isSelected = false;
+  public stayHidden = true;
 
   constructor(private _monstreService: MonstreService) { }
 
@@ -22,13 +23,25 @@ export class ChampselectComponent implements OnInit {
      
   }
 
+  animePerso(){
+    return this.currentUser
+  }
+
   showMonster(x ,y){
     const currentChamp = document.getElementById("currentChamp");
-    const currentChampName = document.getElementById("currentChampName")
     this.currentUser.name = x;
     this.currentUser.img = y;
     currentChamp.setAttribute("src", this.currentUser.img);
     this.isSelected = true;
+    this._monstreService.playerOneImg = this.currentUser.img;
+    console.log(this._monstreService.playerOneImg);
+    this.animePerso();
+    console.log(this.animePerso().name + "Je suis AP");
+    
+  }
+
+  setBattleground(){
+
   }
 
 }

@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class MonstreService {
 
   currentMonster: Monster[];
+  playerOneImg =  "";
 
   allMonster: Monster[] = [
     {
