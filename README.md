@@ -1,1 +1,1 @@
-#### Remote de la meilleur équipe s
+#### Remote de la meilleur équipe :)
